@@ -1,27 +1,25 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
+
 /**
-*print_diagsums -  a function that prints the sum of
-* the two diagonals of a square matrix of integers.
-*@a:matrix to be summed
-*@size:size of the matrix
-*/
-void print_diagsums(int *a, int size)
-{
-	int i, sum1 = 0, sum2 = 0;
+ * File: main.h
+ * Auth: Dev Nderitu
+ *description: Header file containing prototypes for all functions
+ * used in the0x07-pointers_arrays_strings directory
+ */
 
-	for (i = 0; i < size; i++)
-	{
-		sum1 += a[i];
-		a += size;
-	}
 
-	a -= size;
+#include <stdio.h>
+#include <stddef.h>
 
-	for (i = 0; i < size; i++)
-	{
-		sum2 += a[i];
-		a -= size;
-	}
-
-	printf("%d, %d\n", sum1, sum2);
-}
+void print_chessboard(char (*a)[8]);
+void print_diagsums(int *a, int size);
+void set_string(char **s, char *to);
+unsigned int _strspn(char *s, char *accept);
+int _putchar(char c);
+char *_memset(char *s, char b, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n);
+char *_strchr(char *s, char c);
+char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
+#endif /* MAIN_H */
